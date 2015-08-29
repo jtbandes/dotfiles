@@ -1,0 +1,30 @@
+[alias]
+    b = branch
+    ci = commit
+    co = checkout
+    cp = cherry-pick
+    di = diff
+    ds = diff --stat
+    f = fetch -pt
+    ff = pull --ff-only
+    m = merge
+    pr = pull-request -o
+    st = status
+    sub = submodule
+    sup = submodule update --recursive
+    which = !sh -c 'git branch -a --contains $@ && git tag --contains $@' --
+    cfg = config -e --global
+    l = log --all --graph --color --decorate --oneline
+    ll = log --all --graph --color --decorate
+    s = stash
+    x = !sh -c 'gitx'
+    sshow = stash show --format=medium
+    conflict = !sh -c 'git diff --name-only --diff-filter=U -z | xargs -0 $EDITOR'
+    conflicts = diff --name-only --diff-filter=U
+    resolve = !sh -c 'git diff --name-only --diff-filter=U -z | xargs -0 git add -v --'
+    halp = help
+    rebranch = !sh -c "'if [ $(git rev-parse --abbrev-ref head) = master ]; then git checkout -b \"$@\"; git branch -f master origin/master; else echo error: not on master; false; fi'" --
+    remaster = branch master origin/master
+    squash-branch = !sh -c 'git rebase -i `git merge-base head master`'
+    cp-branch = !sh -c 'git b CP_BR_TEMP $0 && git co -B $0 && git cp `git merge-base head CP_BR_TEMP`..CP_BR_TEMP && git b -D CP_BR_TEMP'
+    cp-branch-abort = !git reset --hard CP_BR_TEMP && git b -d CP_BR_TEMP
