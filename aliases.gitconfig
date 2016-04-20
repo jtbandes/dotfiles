@@ -24,8 +24,8 @@
     conflicts = diff --name-only --diff-filter=U
     resolve = !sh -c 'git diff --name-only --diff-filter=U -z | xargs -0 git add -v --'
     halp = help
-    rebranch = !sh -c "'if [ $(git rev-parse --abbrev-ref head) = master ]; then git checkout -b \"$@\"; git branch -f master origin/master; else echo error: not on master; false; fi'" --
+    rebranch = !sh -c "'if [ $(git rev-parse --abbrev-ref HEAD) = master ]; then git checkout -b \"$@\"; git branch -f master origin/master; else echo error: not on master; false; fi'" --
     remaster = branch master origin/master
-    squash-branch = !sh -c 'git rebase -i `git merge-base head master`'
-    cp-branch = !sh -c 'git b CP_BR_TEMP $0 && git co -B $0 && git cp `git merge-base head CP_BR_TEMP`..CP_BR_TEMP && git b -D CP_BR_TEMP'
+    squash-branch = !sh -c 'git rebase -i `git merge-base HEAD master`'
+    cp-branch = !sh -c 'git b CP_BR_TEMP $0 && git co -B $0 && git cp `git merge-base HEAD CP_BR_TEMP`..CP_BR_TEMP && git b -D CP_BR_TEMP'
     cp-branch-abort = !git reset --hard CP_BR_TEMP && git b -d CP_BR_TEMP
