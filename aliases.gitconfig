@@ -5,6 +5,7 @@
     co = checkout
     cp = cherry-pick
     di = diff
+    dic = diff --cached
     ds = diff --stat
     f = fetch -pt
     ff = pull --ff-only
