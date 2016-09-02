@@ -16,7 +16,8 @@
     sup = submodule update --recursive
     which = !sh -c 'git branch -a --contains $@ && git tag --contains $@' --
     cfg = config -e --global
-    l = log --all --graph --color --decorate --oneline
+    l = log --graph --color --decorate --oneline
+    la = log --all --graph --color --decorate --oneline
     ll = log --all --graph --color --decorate
     s = stash
     x = !sh -c 'gitx'
