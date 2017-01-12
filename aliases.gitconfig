@@ -2,6 +2,7 @@
     alias = config --get-regexp '^alias\\.'
     amend = commit --amend --no-edit
     b = branch
+    b- = "!bash -c 'git cherry -v ${2:-origin/master} \"$1\" | sed -E -e \"s/^(-.+)$/$(printf \"\\e[38;5;242m\")\\\\1$(tput sgr0)/g\" -e \"s/^(\\+.+)$/$(printf \"\\e[38;5;207m\")\\\\1$(tput sgr0)/g\"' --"
     ci = commit
     co = checkout
     cp = cherry-pick
