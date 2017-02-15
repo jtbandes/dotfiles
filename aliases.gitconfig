@@ -16,6 +16,7 @@
     pr = pull-request -o
     pf = "!bash -c 'BR=$(git rev-parse --abbrev-ref HEAD); read -p \"Force-push $(tput setaf 3)$BR$(tput sgr0) to origin? [y/N] \"; if [[ \"$REPLY\" =~ ^[yY]$ ]]; then set -x; git push -f origin \"$BR\"; else echo Cancelled.; fi'"
     st = status
+    stat = show --stat
     sub = submodule
     sup = submodule update --recursive
     which = !sh -c 'git branch -a --contains $@ && git tag --contains $@' --
