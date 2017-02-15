@@ -1,4 +1,5 @@
 [alias]
+    a = add --patch
     alias = config --get-regexp '^alias\\.'
     amend = commit --amend --no-edit
     b = branch
