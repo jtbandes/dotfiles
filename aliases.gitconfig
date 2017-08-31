@@ -15,6 +15,7 @@
     m = merge
     pr = pull-request -o
     pf = "!bash -c 'BR=$(git rev-parse --abbrev-ref HEAD); read -p \"Force-push $(tput setaf 3)$BR$(tput sgr0) to origin? [y/N] \"; if [[ \"$REPLY\" =~ ^[yY]$ ]]; then set -x; git push -f origin \"$BR\"; else echo Cancelled.; fi'"
+    pu = !sh -c 'git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
     st = status
     stat = show --stat
     sub = submodule
