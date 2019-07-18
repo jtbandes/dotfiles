@@ -12,6 +12,7 @@
     ds = diff --stat
     f = fetch -pt
     ff = pull --ff-only
+    fpr = !bash -c 'git fetch origin pull/$1/head:pr-$1 "${@:2}"' --
     fmt = clang-format
     m = merge
     pr = pull-request -o
