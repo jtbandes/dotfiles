@@ -35,6 +35,7 @@
     resolve = !sh -c 'git diff --name-only --diff-filter=U -z | xargs -0 git add -v --'
     halp = help
     rebranch = !sh -c "'if [ $(git rev-parse --abbrev-ref HEAD) = master ]; then git checkout -b \"$@\"; git branch -f master origin/master; else echo error: not on master; false; fi'" --
+    remain = branch main origin/main
     remaster = branch master origin/master
     squash-branch = !sh -c 'git rebase -i `git merge-base HEAD master`'
     cp-branch = !sh -c 'git b CP_BR_TEMP $0 && git co -B $0 && git cp `git merge-base HEAD CP_BR_TEMP`..CP_BR_TEMP && git b -D CP_BR_TEMP'
